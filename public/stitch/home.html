@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VolticEnergy | Industrial Solar &amp; Energy Storage Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#004a7a",
+                        "surface-bright": "#f7fafc",
+                        "primary-fixed": "#cce5ff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#004877",
+                        "inverse-on-surface": "#eef1f3",
+                        "surface-tint": "#006397",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-container": "#f7fff1",
+                        "tertiary-fixed": "#98f994",
+                        "surface-dim": "#d7dadc",
+                        "surface-white": "#FFFFFF",
+                        "surface-container-high": "#e5e9eb",
+                        "on-primary-fixed-variant": "#004b73",
+                        "on-surface-variant": "#3f4851",
+                        "surface-container-low": "#f1f4f6",
+                        "text-main": "#2D3748",
+                        "outline": "#6f7882",
+                        "tertiary-container": "#268630",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "industrial-blue": "#008DD4",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-fixed": "#d0e4ff",
+                        "background": "#f7fafc",
+                        "surface-container": "#ebeef0",
+                        "on-tertiary-fixed": "#002204",
+                        "primary-fixed-dim": "#92ccff",
+                        "deep-navy": "#066AAB",
+                        "eco-green": "#43A047",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#006b1b",
+                        "tertiary-fixed-dim": "#7ddc7a",
+                        "on-primary-fixed": "#001d31",
+                        "inverse-primary": "#92ccff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#181c1e",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#71b8fe",
+                        "on-background": "#181c1e",
+                        "secondary": "#00629f",
+                        "secondary-fixed-dim": "#9bcbff",
+                        "primary": "#006194",
+                        "on-tertiary-fixed-variant": "#005313",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface": "#f7fafc",
+                        "primary-container": "#007bb9",
+                        "border-subtle": "#E2E8F0",
+                        "outline-variant": "#bfc7d2",
+                        "on-secondary-fixed": "#001d34",
+                        "on-primary-container": "#fdfcff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-tablet": "40px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-technical": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-technical": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .spec-bar {
+            background: linear-gradient(90deg, #F1F4F6 0%, #FFFFFF 100%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface-white border-b border-border-subtle shadow-sm transition-all duration-300 h-20 flex items-center">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center w-full">
+<div class="flex items-center gap-12">
+<a class="font-headline-sm text-headline-sm font-bold text-industrial-blue" href="#">VolticEnergy</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-industrial-blue font-bold border-b-2 border-industrial-blue py-2" href="#">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-industrial-blue transition-colors duration-200" href="#">Products</a>
+<a class="font-body-md text-on-surface-variant hover:text-industrial-blue transition-colors duration-200" href="#">Solutions</a>
+<a class="font-body-md text-on-surface-variant hover:text-industrial-blue transition-colors duration-200" href="#">About Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-industrial-blue transition-colors duration-200" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-industrial-blue">language</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-industrial-blue">search</span>
+</div>
+<button class="hidden md:block font-body-md text-on-surface-variant hover:text-industrial-blue font-medium transition-colors">Login</button>
+<button class="bg-industrial-blue text-on-primary px-6 py-2.5 rounded-lg font-body-md font-semibold hover:bg-deep-navy transition-all duration-200 shadow-sm active:scale-[0.98]">Request Quote</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[700px] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Solar farm spanning across a bright landscape" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLv5p13Q13IdqTWwF5c3zYrezU69rUxc7gZiUqFfJJB2iHpy34m7ak4fpZmrIfHgVuXzqD5vn4StIUTN1VJtwJdW4OfAY2X7xpf72kqt5-zMrb7tevOMz3JUNiEr6spFrNv-FF1hzQpeFxXXbK5p_0xmBrLy3ZgwT5beoGNaYxI1UsiJrjvDtASA7cWS5x26chK0D25OhNdzzVjEgRSY80jQ7tIwiAk0AAqUCI8RhVV4MPF229MFHFUtiYI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 bg-industrial-blue/10 text-industrial-blue font-label-technical text-label-technical rounded-full mb-6">RELIABLE ENERGY INFRASTRUCTURE</span>
+<h1 class="font-display-lg text-display-lg mb-6 text-on-surface leading-tight">Leading the World in Clean Energy Solutions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                    Empowering industries and communities with precision-engineered solar panels and advanced energy storage systems for a sustainable tomorrow.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-industrial-blue text-on-primary px-8 py-4 rounded-lg font-body-md font-bold hover:bg-deep-navy transition-all flex items-center justify-center gap-2 group">
+                        Inquiry Now
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-surface-white border border-border-subtle text-industrial-blue px-8 py-4 rounded-lg font-body-md font-bold hover:bg-surface-container-low transition-all flex items-center justify-center gap-2">
+                        View Product Catalog
+                        <span class="material-symbols-outlined">description</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Quick Stats -->
+<div class="absolute bottom-12 right-margin-desktop hidden lg:grid grid-cols-2 gap-4">
+<div class="bg-surface-white/90 backdrop-blur-md p-6 border border-border-subtle rounded-xl shadow-lg w-48">
+<div class="text-industrial-blue font-bold text-headline-sm mb-1">20+</div>
+<div class="text-on-surface-variant text-label-caps">Years Industry Experience</div>
+</div>
+<div class="bg-surface-white/90 backdrop-blur-md p-6 border border-border-subtle rounded-xl shadow-lg w-48">
+<div class="text-eco-green font-bold text-headline-sm mb-1">5GW+</div>
+<div class="text-on-surface-variant text-label-caps">Installed Capacity</div>
+</div>
+</div>
+</section>
+<!-- Core Products Section -->
+<section class="py-24 bg-surface-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Core Products</h2>
+<p class="text-on-surface-variant font-body-lg max-w-xl">Engineered for maximum efficiency and industrial-grade durability.</p>
+</div>
+<a class="text-industrial-blue font-semibold flex items-center gap-2 hover:underline decoration-2" href="#">Explore All Products <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group bg-surface-bright border border-border-subtle rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+<div class="h-48 bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-40 h-40 object-contain group-hover:scale-110 transition-transform duration-500" data-alt="High-efficiency solar photovoltaic panel with dark blue crystalline structure, isolated on a clean white technical background, professional product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrgtOIlxN8OEz4w_UHE-6gq-sIfDhb3yPZ9Wm6_CEKwsH4t6IVdvC5WE-A4uSPuXjGC790gYgpS8s8lUWxF2hLWYMI6PA8IF3rwvUIW2E9nXduUL2ixYGdaH3C-Oadl3hPFPN9O25kijCCKdyyio5Dn0kBMG7Rf2dq3zXZKBt9jLwkgc8Kvq3XqaEuN38-BaFnFIBtd7VR3LhDpzzd9yHDfwPCYFVFYcns1mb20hAQ-ZNQ4pqjrLZc"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-headline-sm mb-2">Solar Panels</h3>
+<p class="text-on-surface-variant text-body-md mb-6">High-efficiency bifacial modules for industrial utility projects.</p>
+<div class="spec-bar p-3 rounded flex justify-between items-center">
+<span class="font-label-technical text-label-technical text-industrial-blue">EFFICIENCY: 22.8%</span>
+<span class="material-symbols-outlined text-industrial-blue">info</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-bright border border-border-subtle rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+<div class="h-48 bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-40 h-40 object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Sophisticated industrial solar inverter with digital monitoring screen and ventilation grilles, sleek modern gray design, high-tech engineering aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmv1nd8m6nHQaDxCXx31ylV5iiXeqMcTiy-Nrndoq_i5znI-FB64NmO2WMDuM1y4J4gbQ9TjiUOu7AePNcyGaqfSTr6mESztjyrbL6n_yvHuvTN7021EpjbKbfk5iRZkoXuG3ZtwlZbvIE2xGhJ8K9skg5BDdzdWL1mPPGPkfonQdfBVntt3v2bkiR2Hj2oPORhS6HzvQB74idWZSkl90AA1Yr6V0rCvUvLoBzU5v5IqPGRcw8Gz6E"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-headline-sm mb-2">Smart Inverters</h3>
+<p class="text-on-surface-variant text-body-md mb-6">Grid-tie and hybrid solutions with advanced cloud monitoring.</p>
+<div class="spec-bar p-3 rounded flex justify-between items-center">
+<span class="font-label-technical text-label-technical text-industrial-blue">CAPACITY: 50-250KW</span>
+<span class="material-symbols-outlined text-industrial-blue">info</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-bright border border-border-subtle rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+<div class="h-48 bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-40 h-40 object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Large-scale lithium-ion battery energy storage module, industrial rack-mount design with LED status indicators, symbolizing power stability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkNA1XJNOCCzYEk-UJQa1snK5BRrSWihLQuL8-W4ni1nCIO1HnFEQX1dXeCQc4nN5pb-a2SThbWgxjOAhTpWs0d2k1MaxaKQ9vWNR2jyGmK1ouRRMbzfxlUOWYOlEAHkZW07QVP8BvNCqtZspdkGnVSUzB68d2UQmySAAtqpavQ-pT4LFj-LOGqwpdyvD6C7p7P-iHzAfg-NMZUgKCS_vsb-8cWeJYzIswmyRnET8WHHfvvJQcbWVm"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-headline-sm mb-2">LiFePO4 Batteries</h3>
+<p class="text-on-surface-variant text-body-md mb-6">Safe and scalable energy storage for peak demand management.</p>
+<div class="spec-bar p-3 rounded flex justify-between items-center">
+<span class="font-label-technical text-label-technical text-industrial-blue">LIFE: 6000+ CYCLES</span>
+<span class="material-symbols-outlined text-industrial-blue">info</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-surface-bright border border-border-subtle rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+<div class="h-48 bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-40 h-40 object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Integrated containerized energy storage system ESS, large white industrial unit with cooling systems and technical labeling, sustainable energy infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEsiMf1i8qs0kI8NvYY62KVcWa3ROZbp0K1Wg4VLNR5S3jA_8jTMb5i66EZNYqgaaV4Mv0Wm3ek7prEkEQ-fZByXa09e7P4pdqpMzVLfYTfYG4Rcs_RG4ysfT_dr_uMfHDwSrJvX2urdPPR42xJtNlIS6OuCbByHH42jsQb_i1V0qp3RigiwEFnZNsYsiU7zniilrDUY2x0mm4yrA_mSVXLrREnKvGJqy3Hj0H8Co2AIEFdkgncMFO"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-headline-sm mb-2">ESS Systems</h3>
+<p class="text-on-surface-variant text-body-md mb-6">Containerized solutions for utility-scale energy shifting.</p>
+<div class="spec-bar p-3 rounded flex justify-between items-center">
+<span class="font-label-technical text-label-technical text-industrial-blue">CUSTOM: MWH RANGE</span>
+<span class="material-symbols-outlined text-industrial-blue">info</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Solutions Section (Bento Grid Style) -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-on-surface text-center mb-16">Customized Energy Solutions</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Industrial Solution -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-2xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Wide shot of a massive industrial manufacturing plant with solar panels installed on the roof, bright daylight, illustrating sustainable large-scale manufacturing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZAVI1FVX7lh34wwPbIGCSg_LwMkKI5GphQnXXoY3YZCyMrFyjFIL4Lbz7-jwsDpnimVrWGcjxuBiNAg8CTgxJKVfD5j0u3S45TDtGCRr9lVotRt75Ii6ky1kyYD22PPOmJsYyhWoUkm9-2mb7vLreuIMfhLIva-enF9nPdVHD_KTeTtbk9rFGQnCy9i5AvYX2vgmHeDBq7LkdDGBOMG6aVpU8c0B1u3t7RobJdgeaxFudsdXFaR5j"/>
+<div class="absolute inset-0 bg-gradient-to-t from-industrial-blue/90 via-industrial-blue/20 to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-white font-headline-md mb-2">Industrial Solutions</h3>
+<p class="text-white/80 font-body-md max-w-lg mb-6">Comprehensive power systems for factories and manufacturing hubs, reducing carbon footprint and operational costs.</p>
+<button class="w-fit text-white font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<!-- Commercial Solution -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-2xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern glass-walled office building with architectural solar integration on its facade and roof, clean corporate aesthetic, urban sustainable development." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3mOh5b_E7H64vAhRykKS3HG77UuirUrjz2df_h3DFksIsFKVF_J6Qo99mo_UpX3QkSLd1PAPbvQ_sddyaa7uEpS5C08qlKsFIe-gcg8ACOkDbBrutrRC8EowKmP6DeJLUk9PzRXBC6DjV46yMbdpRxxXf2T81L5QWvh56uv9B19rH2a4cqyCQEnmVsvLtHtJM6t7ShJiBI_-hTrpL1HdMq6rQXnmRk8pfJn4cjCBIepIH6HxOrxJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-navy/90 via-transparent to-transparent p-8 flex flex-col justify-end">
+<h3 class="text-white font-headline-sm mb-2">Commercial Systems</h3>
+<p class="text-white/80 font-body-md mb-6">Scalable energy for office buildings and retail complexes.</p>
+<button class="w-fit text-white font-semibold flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<!-- Residential Solution -->
+<div class="md:col-span-12 group relative overflow-hidden rounded-2xl h-48">
+<div class="absolute inset-0 bg-industrial-blue/5 flex items-center px-12 border border-industrial-blue/10">
+<div class="flex-1">
+<h3 class="font-headline-sm mb-2">Residential Microgrids</h3>
+<p class="text-on-surface-variant max-w-2xl">Reliable backup power and self-consumption optimization for modern residential communities.</p>
+</div>
+<span class="material-symbols-outlined text-industrial-blue text-5xl opacity-20">home_work</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 bg-surface-white">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="absolute -top-6 -left-6 w-32 h-32 bg-industrial-blue/5 rounded-full z-0"></div>
+<img alt="VolticEnergy headquarters showing professional staff and precision testing equipment" class="relative z-10 w-full rounded-2xl shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLtOYfD88ZxJuq-jFVU860-CbvstgSc-5g69JmB3Qz0KC4pGxQeog7zmqu1ttY7JyS20Lb2aAHsHPI1ocwulHx-6J89fEjXz2rAqEANjkxKepCrmXsXlDmZU151sszARV2Pzt_nPcDgHBV5d0_H7eIqiyfpQsg8O8wniput7mFsFje8lzn0utcR8PQvu6Q0SZQotfwvVmCajpUIqJUfEDCief_D4_70V_LqzhGW8T9Y_3x3V0EMjtGyJJZI"/>
+<div class="absolute -bottom-10 -right-10 bg-white p-8 rounded-xl shadow-xl border border-border-subtle hidden md:block">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-eco-green/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-eco-green">verified</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">ISO Certified</div>
+<div class="text-label-caps text-on-surface-variant">Global Standard Compliance</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<span class="font-label-technical text-industrial-blue mb-4 block">EXCELLENCE IN ENERGY</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">Engineering a More Sustainable Future Since 2004</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-industrial-blue/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-industrial-blue">public</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg mb-2">Global Reach</h4>
+<p class="text-on-surface-variant">Exporting to over 80 countries with a robust distribution network and localized technical support.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-industrial-blue/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-industrial-blue">science</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg mb-2">Advanced R&amp;D</h4>
+<p class="text-on-surface-variant">Continuous innovation in material science and power electronics with 150+ international patents.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-industrial-blue/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-industrial-blue">support_agent</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg mb-2">Expert Consultation</h4>
+<p class="text-on-surface-variant">Our team provides full project lifecycle support from design feasibility to final commissioning.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Global Partners & Certifications -->
+<section class="py-16 bg-surface-container-low border-y border-border-subtle">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<p class="text-center text-label-caps text-on-surface-variant mb-10 tracking-widest">TRUSTED BY GLOBAL ENERGY LEADERS</p>
+<div class="flex flex-wrap justify-center items-center gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<span class="text-2xl font-bold font-headline-sm">TÜV SÜD</span>
+<span class="text-2xl font-bold font-headline-sm">CE</span>
+<span class="text-2xl font-bold font-headline-sm">UL LISTED</span>
+<span class="text-2xl font-bold font-headline-sm">IEC</span>
+<span class="text-2xl font-bold font-headline-sm">JET</span>
+<span class="text-2xl font-bold font-headline-sm">ROHS</span>
+</div>
+</div>
+</section>
+<!-- Latest News -->
+<section class="py-24 bg-surface-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-center mb-12">
+<h2 class="font-headline-md text-headline-md text-on-surface">Latest News</h2>
+<button class="text-industrial-blue font-semibold flex items-center gap-2">More Insights <span class="material-symbols-outlined">arrow_outward</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<article class="group cursor-pointer">
+<div class="rounded-xl overflow-hidden mb-6 aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An aerial view of a newly completed massive utility-scale solar project in the desert, golden hour lighting, symbolizing progress and clean energy expansion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAixVkMEhbqsA46gOWQAwa3M-Z3Km0dQOgtC_o9T0I2nuf0ah0oy9nwxqhfE_4HJlbi0DcKEipkoE4R14NJITbJ2Bt95GLRGF_EiFeLNymWKFYFWN52LaxQPgdtltia7Bm3e0R4zxd8js2VOs4WP2nyDGPy6Fp2IaGhvEJEh0Dp9xT_5BjsKcIa0x4jkuMYHPs9-sp7xfvmu-KBy_omlglrih3lEEvpB1qJ1mNOfPhHKuwd-aBQDOmr"/>
+</div>
+<span class="text-industrial-blue font-label-technical">COMPANY NEWS • MAR 15, 2024</span>
+<h3 class="font-headline-sm mt-3 group-hover:text-industrial-blue transition-colors">Successful Launch of 50MW Solar Project in North Africa</h3>
+<p class="text-on-surface-variant mt-4 line-clamp-2">VolticEnergy completes its largest offshore-supported project to date, providing clean energy to 20,000 households.</p>
+</article>
+<article class="group cursor-pointer">
+<div class="rounded-xl overflow-hidden mb-6 aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up of a laboratory setting with scientists examining a new type of solar cell technology under a microscope, bright high-tech clinical environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyGDhPTM8lrrMjjbre_DMoSRo5e7PfFC4azUmyChT7O_jcF5rWacvTAVj_FNEQvMzLLx67IlNqdefBrpENoBuR4FiPPn4KYBmpDW_pMosVtFwXaJ7abDEFG5eQhKa0Ev7-SdmJlq-tU0WLU4wA-7StTS5F5eGqtC1cfzehUFO537QIVJOj4pnNYi9UltMx0WAOgD0I5jX5qqYX6oLzeL9mkglcG0nmdo6Y4i2sDT6aU7ZyDgkoDhqs"/>
+</div>
+<span class="text-industrial-blue font-label-technical">TECH TRENDS • FEB 28, 2024</span>
+<h3 class="font-headline-sm mt-3 group-hover:text-industrial-blue transition-colors">The Future of Energy Storage: Solid State Batteries</h3>
+<p class="text-on-surface-variant mt-4 line-clamp-2">Exploring the upcoming shift in ESS technology and how VolticEnergy is preparing for the next generation of density.</p>
+</article>
+<article class="group cursor-pointer">
+<div class="rounded-xl overflow-hidden mb-6 aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A handshake between two professionals in front of a renewable energy display, professional conference setting, focused on partnership and collaboration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmuCqZDxedXDdJxa3ekWUgcdBgE2h33mEgdmrM_cP2k4ozkPvU0vYAL7PFgM33nwPs0b0fSljTGiMVXCics8q5RrTpGYcWm1jQOGgGlL2A7ythKe8YoEGzDQGzcjMew-9Uem7_co-C9djVGN2g25KiLSfDX5qAmUlds2b0nE_C03KOi6DuL_ep4xvKQORDTRtBRmto9PfbSKIfXQXRZO50FzokvCg1vpUCy7JK5PIe6FCt3f47SrzX"/>
+</div>
+<span class="text-industrial-blue font-label-technical">PARTNERSHIP • FEB 10, 2024</span>
+<h3 class="font-headline-sm mt-3 group-hover:text-industrial-blue transition-colors">New Global Distribution Partnership with EuroEnergy</h3>
+<p class="text-on-surface-variant mt-4 line-clamp-2">Expanding our footprint in the European market through a strategic logistics and support alliance.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-border-subtle">
+<div class="max-w-container-max mx-auto px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="col-span-1 lg:col-span-1">
+<a class="font-headline-sm text-headline-sm font-bold text-deep-navy mb-6 block" href="#">VolticEnergy</a>
+<p class="text-on-surface-variant mb-6 pr-4">Precision engineering and innovation for a sustainable energy landscape. Providing B2B infrastructure solutions worldwide.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-industrial-blue hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">alternate_email</span></a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-industrial-blue hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-industrial-blue underline decoration-2 underline-offset-4 transition-all" href="#">Products Overview</a></li>
+<li><a class="text-on-surface-variant hover:text-industrial-blue underline decoration-2 underline-offset-4 transition-all" href="#">Technical Support</a></li>
+<li><a class="text-on-surface-variant hover:text-industrial-blue underline decoration-2 underline-offset-4 transition-all" href="#">Global Distribution</a></li>
+<li><a class="text-on-surface-variant hover:text-industrial-blue underline decoration-2 underline-offset-4 transition-all" href="#">Certifications</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Resources</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-industrial-blue underline decoration-2 underline-offset-4 transition-all" href="#">Case Studies</a></li>
+<li><a class="text-on-surface-variant hover:text-industrial-blue underline decoration-2 underline-offset-4 transition-all" href="#">White Papers</a></li>
+<li><a class="text-on-surface-variant hover:text-industrial-blue underline decoration-2 underline-offset-4 transition-all" href="#">Investor Relations</a></li>
+<li><a class="text-on-surface-variant hover:text-industrial-blue underline decoration-2 underline-offset-4 transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Contact Us</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-industrial-blue mt-1">location_on</span>
+<p class="text-on-surface-variant">Industrial Plaza South, Energy District, Block 10, Shanghai, China</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-industrial-blue">call</span>
+<p class="text-on-surface-variant">+86 (21) 555-0198</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-industrial-blue">mail</span>
+<p class="text-on-surface-variant">contact@volticenergy.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-8">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-body-md">© 2024 VolticEnergy Industrial. All rights reserved. Precision Engineering for a Sustainable Future.</p>
+<div class="flex gap-8">
+<a class="text-on-surface-variant text-sm hover:text-industrial-blue transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant text-sm hover:text-industrial-blue transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button class="fixed bottom-8 right-8 w-12 h-12 bg-industrial-blue text-white rounded-full shadow-lg flex items-center justify-center hover:bg-deep-navy transition-all z-40" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('shadow-md', 'h-16');
+                header.classList.add('h-20');
+            }
+        });
+
+        // Simple reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Vercel local state
+.vercel/
+
+# local source materials and QA artifacts
+tmp/
+网站资料/
+
+# logs
+*.log
+pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# TypeScript cache
+*.tsbuildinfo
