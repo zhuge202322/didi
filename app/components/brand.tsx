@@ -1,8 +1,9 @@
+import Image from "next/image";
+
 export function Brand() {
   return (
-    <span className="brand" aria-label="Yujie Energy Systems">
-      <span className="brand-mark">YJ</span>
-      <span className="brand-copy"><strong>YUJIE</strong><em>ENERGY SYSTEMS</em></span>
+    <span className="renewal-brand" aria-label="YnJoy Energy">
+      <Image src="/new-site/logo.png" alt="YnJoy Energy" width={172} height={72} priority />
     </span>
   );
 }

@@ -1,34 +1,27 @@
 import Link from "next/link";
+import { Facebook, Linkedin, Mail, MessageCircle, Music2 } from "lucide-react";
 import { Brand } from "./brand";
+
+const companyQuery = encodeURIComponent("Jiaxing Easyon Technology Co., Ltd.");
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
-      <div className="page-shell footer-top">
-        <div><Brand /><p>Industrial solar conversion, motor control and lithium storage supply for international B2B projects.</p></div>
-        <div>
-          <span>PRODUCTS</span>
-          <Link href="/products/syp-hybrid-inverters">Hybrid inverters</Link>
-          <Link href="/products/lx100-solar-pump-drives">Solar pump drives</Link>
-          <Link href="/products/lifepo4-battery-packs">LiFePO4 batteries</Link>
-          <Link href="/products/ess-and-accessories">Solar & ESS systems</Link>
-        </div>
-        <div>
-          <span>DOCUMENTS</span>
-          <a href="/downloads/syp-hybrid-inverter-catalog.pdf" target="_blank" rel="noreferrer">SYP catalog</a>
-          <a href="/downloads/mega-6-16kw-ip65.pdf" target="_blank" rel="noreferrer">MEGA datasheet</a>
-          <a href="/downloads/lx100-iec62109-test-report.pdf" target="_blank" rel="noreferrer">IEC test report</a>
-          <a href="/downloads/fuyue-48v100ah-msds.pdf" target="_blank" rel="noreferrer">Battery MSDS</a>
-        </div>
-        <div>
-          <span>COMPANY</span>
-          <Link href="/about">About Yujie</Link>
-          <Link href="/quality">Quality process</Link>
-          <Link href="/contact">Request a quote</Link>
-          <a href="mailto:sales@yj-energy.com">Contact sales</a>
+    <footer className="renewal-footer">
+      <div className="renewal-shell renewal-footer-grid">
+        <div className="renewal-footer-brand"><Brand /><p>Integrated renewable energy sourcing and export support from Jiaxing, China.</p></div>
+        <div><span>PRODUCTS</span><Link href="/products#hybrid">Hybrid Solar Inverter</Link><Link href="/products#pump">Solar Pump Inverter</Link><Link href="/products#battery">LiFePO4 Battery</Link></div>
+        <div><span>COMPANY</span><Link href="/about">About Us</Link><Link href="/#factory">Our Network</Link><Link href="/#contact">Contact Us</Link></div>
+        <div className="renewal-footer-contact"><span>CONTACT</span><a href="mailto:fangdan0328@gmail.com"><Mail size={16} /> fangdan0328@gmail.com</a><a href="https://wa.me/8613735536084" target="_blank" rel="noreferrer"><MessageCircle size={16} /> +86 137 3553 6084</a></div>
+      </div>
+      <div className="renewal-shell renewal-footer-bottom">
+        <span>© 2026 Jiaxing Easyon Technology Co., Ltd.</span>
+        <div className="renewal-socials" aria-label="Social media">
+          <a href={`https://www.facebook.com/search/top?q=${companyQuery}`} target="_blank" rel="noreferrer" aria-label="Find us on Facebook"><Facebook /></a>
+          <a href={`https://www.tiktok.com/search?q=${companyQuery}`} target="_blank" rel="noreferrer" aria-label="Find us on TikTok"><Music2 /></a>
+          <a href="https://wa.me/8613735536084" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><MessageCircle /></a>
+          <a href={`https://www.linkedin.com/search/results/companies/?keywords=${companyQuery}`} target="_blank" rel="noreferrer" aria-label="Find us on LinkedIn"><Linkedin /></a>
         </div>
       </div>
-      <div className="page-shell footer-bottom"><span>© 2026 Jiaxing Yujie Intelligent Technology Co., Ltd.</span><span>Professional · Reliable · Global</span></div>
     </footer>
   );
 }

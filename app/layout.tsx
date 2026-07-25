@@ -5,8 +5,8 @@ import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 
 export const metadata: Metadata = {
-  title: "Yujie Energy Systems | Industrial Solar, Drives & Storage",
-  description: "International B2B supply for solar inverters, pump drives, industrial motor control, LiFePO4 storage and complete ESS projects.",
+  title: "YnJoy Energy | Renewable Energy Solutions",
+  description: "Hybrid solar inverters, solar pump inverters and LiFePO4 battery solutions with sourcing and export support from Jiaxing, China.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

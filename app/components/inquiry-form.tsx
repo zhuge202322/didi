@@ -1,72 +1,59 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check, Mail, Send, ShieldCheck } from "lucide-react";
-import { productCatalog } from "../catalog-data";
+import { Check, Mail, Send } from "lucide-react";
+import { products } from "../catalog-data";
 
 export function InquiryForm({ defaultProduct = "" }: { defaultProduct?: string }) {
-  const [submitted, setSubmitted] = useState(false);
-  const [mailHref, setMailHref] = useState("mailto:sales@yj-energy.com");
+  const [mailHref, setMailHref] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const subject = `RFQ - ${data.get("product") || "Energy project"} - ${data.get("company") || "New buyer"}`;
+    const subject = `Product inquiry - ${data.get("product") || "Renewable energy project"}`;
     const body = [
-      `Contact: ${data.get("name") || ""}`,
+      `Name: ${data.get("name") || ""}`,
       `Company: ${data.get("company") || ""}`,
       `Email: ${data.get("email") || ""}`,
       `Phone / WhatsApp: ${data.get("phone") || ""}`,
-      `Country: ${data.get("country") || ""}`,
-      `Buyer role: ${data.get("role") || ""}`,
+      `Country / region: ${data.get("country") || ""}`,
       `Product: ${data.get("product") || ""}`,
-      `Model: ${data.get("model") || ""}`,
       `Quantity: ${data.get("quantity") || ""}`,
-      `Project details: ${data.get("message") || ""}`,
+      `Requirements: ${data.get("message") || ""}`,
     ].join("\n");
-    setMailHref(`mailto:sales@yj-energy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
-    setSubmitted(true);
+    setMailHref(`mailto:fangdan0328@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
   };
 
-  if (submitted) {
+  if (mailHref) {
     return (
-      <div className="rfq-success" role="status">
+      <div className="renewal-form-success" role="status">
         <span><Check /></span>
-        <h3>Your RFQ brief is ready.</h3>
-        <p>Use the email button to send the prepared project brief to our sales team. No information has left your browser yet.</p>
-        <div className="success-actions">
-          <a className="button button-orange" href={mailHref}><Mail size={18} /> Email this RFQ</a>
-          <button type="button" className="button button-navy" onClick={() => setSubmitted(false)}>Edit request <ArrowRight size={18} /></button>
-        </div>
+        <h3>Your inquiry is ready</h3>
+        <p>Open your email application to send the prepared request to our team.</p>
+        <a className="renewal-button" href={mailHref}><Mail size={18} /> Send by email</a>
+        <button type="button" onClick={() => setMailHref("")}>Edit inquiry</button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-heading"><span>PROJECT RFQ</span><h3>Tell us what you need.</h3><p>Fields marked * help us build an accurate technical shortlist.</p></div>
-      <div className="form-row">
-        <div className="form-field"><label htmlFor="contact-name">Contact name *</label><input id="contact-name" name="name" required autoComplete="name" placeholder="Your name" /></div>
-        <div className="form-field"><label htmlFor="contact-company">Company *</label><input id="contact-company" name="company" required autoComplete="organization" placeholder="Company name" /></div>
+    <form className="renewal-form" onSubmit={handleSubmit}>
+      <div className="renewal-form-heading"><span>PRODUCT INQUIRY</span><h3>Tell us what you need.</h3></div>
+      <div className="renewal-form-row">
+        <label>Name *<input name="name" required autoComplete="name" placeholder="Your name" /></label>
+        <label>Company *<input name="company" required autoComplete="organization" placeholder="Company name" /></label>
       </div>
-      <div className="form-row">
-        <div className="form-field"><label htmlFor="contact-email">Business email *</label><input id="contact-email" name="email" required type="email" autoComplete="email" placeholder="name@company.com" /></div>
-        <div className="form-field"><label htmlFor="contact-phone">Phone / WhatsApp</label><input id="contact-phone" name="phone" type="tel" autoComplete="tel" placeholder="Country code + number" /></div>
+      <div className="renewal-form-row">
+        <label>Email *<input name="email" type="email" required autoComplete="email" placeholder="name@company.com" /></label>
+        <label>Phone / WhatsApp<input name="phone" type="tel" autoComplete="tel" placeholder="Country code + number" /></label>
       </div>
-      <div className="form-row">
-        <div className="form-field"><label htmlFor="contact-country">Destination *</label><input id="contact-country" name="country" required autoComplete="country-name" placeholder="Country / region" /></div>
-        <div className="form-field"><label htmlFor="contact-role">Buyer role *</label><select id="contact-role" name="role" required defaultValue=""><option value="" disabled>Select your role</option><option>Distributor / wholesaler</option><option>EPC contractor</option><option>Installer / system integrator</option><option>OEM / machinery manufacturer</option><option>Project developer</option><option>Direct project buyer</option></select></div>
+      <div className="renewal-form-row">
+        <label>Country / region *<input name="country" required autoComplete="country-name" placeholder="Destination market" /></label>
+        <label>Product *<select name="product" required defaultValue={defaultProduct}><option value="" disabled>Select a product</option>{products.map((product) => <option value={product.name} key={product.slug}>{product.name}</option>)}</select></label>
       </div>
-      <div className="form-row">
-        <div className="form-field"><label htmlFor="contact-product">Product family *</label><select id="contact-product" name="product" required defaultValue={defaultProduct}><option value="" disabled>Select a product</option>{productCatalog.map((product) => <option value={product.shortTitle} key={product.slug}>{product.shortTitle}</option>)}</select></div>
-        <div className="form-field"><label htmlFor="contact-model">Target model</label><input id="contact-model" name="model" placeholder="Model or power range" /></div>
-      </div>
-      <div className="form-row">
-        <div className="form-field"><label htmlFor="contact-quantity">Quantity / annual demand</label><input id="contact-quantity" name="quantity" placeholder="Units, pallets or container plan" /></div>
-        <div className="form-field"><label htmlFor="contact-timeline">Target timeline</label><input id="contact-timeline" name="timeline" placeholder="Sample / order date" /></div>
-      </div>
-      <div className="form-field"><label htmlFor="contact-message">Application & specifications *</label><textarea id="contact-message" name="message" required rows={6} placeholder="Voltage, output, load, motor or pump data, destination certification and documentation requirements..." /></div>
-      <div className="form-submit"><span><ShieldCheck /> Your project data remains local until you choose to email it.</span><button className="button button-orange" type="submit">Prepare RFQ <Send size={18} /></button></div>
+      <label>Quantity<input name="quantity" placeholder="Units or project volume" /></label>
+      <label>Application and requirements *<textarea name="message" required rows={5} placeholder="Voltage, output, battery or pump data, quantity and any certification requirements..." /></label>
+      <button className="renewal-button" type="submit">Prepare inquiry <Send size={18} /></button>
     </form>
   );
 }

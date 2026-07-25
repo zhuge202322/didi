@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function InquiryPage() {
-  redirect("/contact");
+  redirect("/#contact");
 }

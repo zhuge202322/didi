@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import type { ProductFamily } from "../catalog-data";
+import { ArrowUpRight } from "lucide-react";
+import type { Product } from "../catalog-data";
 
-export function ProductLinkCard({ product, index }: { product: ProductFamily; index: number }) {
+export function ProductLinkCard({ product }: { product: Product }) {
   return (
-    <Link className="product-index-card reveal" href={`/products/${product.slug}`}>
-      <div className={`product-index-media ${product.imageClass}`}>
-        <Image src={product.image} alt={product.title} fill priority={index === 2} sizes="(max-width: 720px) 100vw, 50vw" />
-        <span>{String(index + 1).padStart(2, "0")}</span>
+    <Link className="renewal-product-card" href={`/products/${product.slug}`}>
+      <div className="renewal-product-image">
+        <Image src={product.image} alt={product.name} fill sizes="(max-width: 760px) 100vw, 33vw" />
       </div>
-      <div className="product-index-copy">
-        <span>{product.category}</span>
-        <div><h2>{product.shortTitle}</h2><ArrowRight /></div>
+      <div className="renewal-product-copy">
+        <span>{product.categoryLabel}</span>
+        <h3>{product.shortName}</h3>
         <strong>{product.range}</strong>
         <p>{product.summary}</p>
+        <span className="renewal-text-link">View specifications <ArrowUpRight size={17} /></span>
       </div>
     </Link>
   );
