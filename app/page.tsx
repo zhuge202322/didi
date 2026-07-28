@@ -3,18 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Mail, MapPin, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Mail, Phone } from "lucide-react";
 import { products } from "./catalog-data";
 import { InquiryForm } from "./components/inquiry-form";
 import { ProductLinkCard } from "./components/product-link-card";
 
 const banners = [
-  { src: "/new-site/banner-solutions.png", alt: "Complete solar solutions for water pumping and energy storage" },
-  { src: "/new-site/banner-hybrid.png", alt: "Home hybrid inverters from 1.5kW to 12kW" },
-  { src: "/new-site/banner-pump.png", alt: "Solar pump inverters for irrigation and water systems" },
+  { src: "/new-site/banner-v3-1.png", alt: "YnJoy clean energy solutions for homes, batteries and water pumping" },
+  { src: "/new-site/banner-v3-2.png", alt: "YnJoy solar pump inverters for irrigation and water systems" },
+  { src: "/new-site/banner-v3-3.png", alt: "YnJoy home solar inverters from 1.5kW to 12kW" },
+  { src: "/new-site/banner-v3-4.png", alt: "YnJoy LiFePO4 batteries for home energy storage" },
 ];
 
-const factoryImages = [1, 2, 3, 4].map((index) => ({ src: `/new-site/factory-${index}.png`, alt: `Manufacturing and office environment ${index}` }));
+const factoryImages = [1, 2, 3, 4, 5, 6].map((index) => ({ src: `/new-site/factory-${index}.png`, alt: `Manufacturing and office environment ${index}` }));
 const featured = [products[0], products[3], products[6]];
 
 export default function HomePage() {
@@ -86,9 +87,16 @@ export default function HomePage() {
             <h2>Let&apos;s build your next energy project.</h2>
             <p>Share the product, destination and key technical requirements. We will coordinate model selection, quotation and available documentation.</p>
             <div className="renewal-contact-list">
-              <a href="mailto:fangdan0328@gmail.com"><Mail /><div><span>Email</span><strong>fangdan0328@gmail.com</strong></div></a>
-              <a href="https://wa.me/8613735536084" target="_blank" rel="noreferrer"><MessageCircle /><div><span>WhatsApp</span><strong>+86 137 3553 6084</strong></div></a>
-              <div><MapPin /><div><span>Location</span><strong>Jiaxing, Zhejiang, China</strong></div></div>
+              <section className="renewal-office-block">
+                <h3>China Office</h3>
+                <a href="mailto:fangdan0328@gmail.com"><Mail /><div><span>Email</span><strong>fangdan0328@gmail.com</strong></div></a>
+                <a href="tel:+8613735536084"><Phone /><div><span>Tel</span><strong>+86 137 3553 6084</strong></div></a>
+              </section>
+              <section className="renewal-office-block">
+                <h3>Middle East Office <small>(Arabic Support)</small></h3>
+                <a href="mailto:maxlee1021@gmail.com"><Mail /><div><span>Email</span><strong>maxlee1021@gmail.com</strong></div></a>
+                <a href="tel:+8619884326307"><Phone /><div><span>Tel</span><strong>+86 198 8432 6307</strong></div></a>
+              </section>
             </div>
           </div>
           <InquiryForm />

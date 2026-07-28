@@ -1,3 +1,5 @@
+import { yj100ModelRows, yj200ModelRows, yj33pvModelRows } from "./pump-model-data";
+
 export type ProductCategory = "hybrid" | "pump" | "battery";
 
 export type Product = {
@@ -140,6 +142,10 @@ export const products: Product[] = [
       ["Enclosure", "Optional IP54 cabinet"],
     ],
     features: ["Automatic operation after PV connection", "Optional boost module up to 2.2kW", "Single- and three-phase configurations", "Water-level control wiring support"],
+    modelTable: {
+      columns: ["Series", "Model", "Output power", "Input current", "Output current", "Max. DC input"],
+      rows: yj100ModelRows,
+    },
   },
   {
     slug: "yj200-pump-inverter",
@@ -163,6 +169,10 @@ export const products: Product[] = [
       ["Installation", "Wall, rail or flange mounting"],
     ],
     features: ["Hybrid AC and PV operation", "Dry-run and overload protection", "Optional 4G / Wi-Fi remote control", "Water-level and radiation sensor support"],
+    modelTable: {
+      columns: ["Series", "Model", "Output power", "HP", "Input current", "Output current"],
+      rows: yj200ModelRows,
+    },
   },
   {
     slug: "yj33pv-pump-inverter",
@@ -184,17 +194,8 @@ export const products: Product[] = [
     ],
     features: ["Mini 220V models from 0.75-2.2kW", "General 380V models through 400kW", "IP55 options available on selected power classes", "OEM steel housing available on selected models"],
     modelTable: {
-      columns: ["Model", "Rated current", "Output", "Pump power", "MPPT window"],
-      rows: [
-        ["YJ33PV-0K7GB-2S-M", "3.8A", "0-220VAC", "0.75kW", "260-375VDC"],
-        ["YJ33PV-1K5GB-2S-M", "7A", "0-220VAC", "1.5kW", "260-375VDC"],
-        ["YJ33PV-2K2GB-2S-M", "10A", "0-220VAC", "2.2kW", "260-375VDC"],
-        ["YJ33PV-4K0GB-2S", "17A", "0-220VAC", "4.0kW", "260-375VDC"],
-        ["YJ33PV-5K5GB-4T", "13A", "0-380VAC", "5.5kW", "486-750VDC"],
-        ["YJ33PV-7K5GB-4T", "17A", "0-380VAC", "7.5kW", "486-750VDC"],
-        ["YJ33PV-011GB-4T", "25A", "0-380VAC", "11kW", "486-750VDC"],
-        ["YJ33PV-022GB-4T", "45A", "0-380VAC", "22kW", "486-750VDC"],
-      ],
+      columns: ["Series", "Model", "Rated current", "Output", "Pump power", "MPPT window"],
+      rows: yj33pvModelRows,
     },
   },
   {
@@ -202,7 +203,7 @@ export const products: Product[] = [
     category: "battery",
     categoryLabel: "LiFePO4 Battery",
     name: "YJ 51.2V 300Ah LiFePO4 Battery",
-    shortName: "51.2V 300Ah",
+    shortName: "YJ 51.2V 300Ah",
     range: "15.36kWh",
     summary: "Wheeled 15.36kWh battery with integrated BMS, LCD and inverter communication.",
     description: "A high-capacity residential and commercial storage pack built with Grade A LiFePO4 cells and a galvanized steel enclosure.",
@@ -225,7 +226,7 @@ export const products: Product[] = [
     category: "battery",
     categoryLabel: "LiFePO4 Battery",
     name: "YJ 51.2V 400Ah LiFePO4 Battery",
-    shortName: "51.2V 400Ah",
+    shortName: "YJ 51.2V 400Ah",
     range: "20.48kWh",
     summary: "20.48kWh wheeled storage pack for long-duration backup and solar self-use.",
     description: "A scalable high-capacity battery platform with integrated communication, LCD monitoring and robust BMS protection.",
@@ -248,7 +249,7 @@ export const products: Product[] = [
     category: "battery",
     categoryLabel: "LiFePO4 Battery",
     name: "YJ 51.2V 600Ah LiFePO4 Battery",
-    shortName: "51.2V 600Ah",
+    shortName: "YJ 51.2V 600Ah",
     range: "30.72kWh",
     summary: "The largest supplied battery configuration, with 200A continuous discharge.",
     description: "A 30.72kWh storage pack for demanding backup and solar energy applications requiring higher continuous discharge capacity.",

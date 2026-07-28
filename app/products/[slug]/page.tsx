@@ -41,7 +41,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           <div className="renewal-spec-heading"><span>TECHNICAL DATA</span><h2>Core specifications</h2><p>Values are transcribed from the product documents supplied for this website.</p></div>
           <dl className="renewal-spec-list">{product.specs.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
         </div>
-        {product.modelTable && <div className="renewal-shell renewal-model-table"><h2>Selected documented models</h2><div><table><thead><tr>{product.modelTable.columns.map((column) => <th key={column}>{column}</th>)}</tr></thead><tbody>{product.modelTable.rows.map((row) => <tr key={row.join("-")}>{row.map((cell, index) => <td key={`${cell}-${index}`}>{cell}</td>)}</tr>)}</tbody></table></div></div>}
+        {product.modelTable && <div className="renewal-shell renewal-model-table"><h2>Documented models and power ratings</h2><div><table><thead><tr>{product.modelTable.columns.map((column) => <th key={column}>{column}</th>)}</tr></thead><tbody>{product.modelTable.rows.map((row) => <tr key={row.join("-")}>{row.map((cell, index) => <td key={`${cell}-${index}`}>{cell}</td>)}</tr>)}</tbody></table></div></div>}
       </section>
 
       <section className="renewal-related">

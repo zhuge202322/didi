@@ -650,8 +650,8 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 
 .renewal-header { position: sticky; z-index: 100; top: 0; height: 76px; border-bottom: 1px solid var(--renewal-line); background: rgba(255,255,255,.97); box-shadow: 0 6px 22px rgba(17,54,31,.05); backdrop-filter: blur(12px); }
 .renewal-header-inner { height: 76px; display: flex; align-items: center; }
-.renewal-brand { width: 154px; height: 58px; display: inline-flex; align-items: center; }
-.renewal-brand img { width: 154px; height: 58px; object-fit: contain; }
+.renewal-brand { width: 158px; height: 58px; display: inline-flex; align-items: center; }
+.renewal-brand img { width: 158px; height: 58px; object-fit: contain; }
 .renewal-nav { display: flex; align-items: center; gap: 35px; margin-left: auto; }
 .renewal-nav a { position: relative; padding: 28px 0 25px; color: #32483b; font-size: 14px; font-weight: 700; }
 .renewal-nav a::after { position: absolute; right: 50%; bottom: 0; left: 50%; height: 3px; content: ""; background: var(--renewal-green); transition: right .2s ease, left .2s ease; }
@@ -660,8 +660,8 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-whatsapp { min-height: 42px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; border-radius: 4px; background: var(--renewal-green); color: #fff; font-size: 13px; font-weight: 700; }
 .renewal-menu { width: 44px; height: 44px; display: none; place-items: center; padding: 0; border: 1px solid var(--renewal-line); background: #fff; color: var(--renewal-ink); cursor: pointer; }
 
-.renewal-hero { position: relative; display: grid; place-items: center; padding: 14px 0 48px; background: var(--renewal-green-soft); }
-.renewal-banner-stage { position: relative; width: min(100%, calc((100svh - 180px) * 1.5), 1380px); max-height: calc(100svh - 180px); aspect-ratio: 3 / 2; overflow: hidden; background: #fff; box-shadow: 0 18px 50px rgba(16,66,34,.12); }
+.renewal-hero { position: relative; display: grid; place-items: center; padding: 0 0 54px; background: var(--renewal-green-soft); }
+.renewal-banner-stage { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #fff; }
 .renewal-banner-stage img { object-fit: contain; opacity: 0; transition: opacity .55s ease; }
 .renewal-banner-stage img.is-active { opacity: 1; }
 .renewal-hero-controls { position: absolute; z-index: 3; bottom: 8px; display: flex; align-items: center; gap: 20px; }
@@ -670,11 +670,11 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-hero-controls > div button { width: 28px; height: 4px; padding: 0; border: 0; border-radius: 0; background: #b8cbbf; cursor: pointer; }
 .renewal-hero-controls > div button.is-active { background: var(--renewal-green); }
 
-.renewal-about { position: relative; min-height: 720px; display: flex; align-items: center; }
+.renewal-about { position: relative; width: min(calc(100% - 80px), 1440px); min-height: 720px; display: flex; align-items: center; margin: 38px auto 0; }
 .renewal-about > img { object-fit: cover; object-position: center; }
-.renewal-about::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.91) 43%, rgba(255,255,255,.08) 70%); }
-.renewal-about-inner { position: relative; z-index: 2; }
-.renewal-about-copy { width: 53%; max-width: 640px; padding: 54px 50px 50px 0; }
+.renewal-about::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.16) 42%, rgba(255,255,255,.91) 68%, rgba(255,255,255,.98) 100%); }
+.renewal-about-inner { position: relative; z-index: 2; display: flex; justify-content: flex-end; }
+.renewal-about-copy { width: 50%; max-width: 650px; padding: 54px 0 50px 48px; }
 .renewal-about-copy > span, .renewal-section-head > span, .renewal-contact-copy > span, .renewal-products-hero > div > span, .renewal-detail-copy > span, .renewal-spec-heading > span, .renewal-about-hero > div > div > span, .renewal-story span, .renewal-mission span { display: block; margin-bottom: 16px; color: var(--renewal-green); font-size: 12px; font-weight: 800; letter-spacing: 0; }
 .renewal-about-copy h1 { max-width: 600px; margin: 0; font-size: 48px; line-height: 1.1; letter-spacing: 0; }
 .renewal-about-copy p { margin: 22px 0 0; color: #4f6357; font-size: 16px; line-height: 1.75; }
@@ -686,10 +686,13 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-section-head { max-width: 760px; margin-bottom: 44px; }
 .renewal-section-head h2 { margin: 0; font-size: 42px; line-height: 1.15; letter-spacing: 0; }
 .renewal-section-head p { max-width: 680px; margin: 18px 0 0; color: var(--renewal-muted); font-size: 15px; line-height: 1.7; }
+.renewal-factory .renewal-section-head { max-width: 900px; }
+.renewal-factory .renewal-section-head h2 { font-size: 52px; }
+.renewal-factory .renewal-section-head p { max-width: 760px; font-size: 17px; }
 .renewal-marquee { width: 100%; overflow: hidden; }
-.renewal-marquee-track { width: max-content; display: flex; gap: 18px; animation: renewal-scroll 36s linear infinite; }
+.renewal-marquee-track { width: max-content; display: flex; gap: 16px; animation: renewal-scroll 44s linear infinite; }
 .renewal-marquee:hover .renewal-marquee-track { animation-play-state: paused; }
-.renewal-marquee figure { position: relative; width: min(660px, 62vw); aspect-ratio: 16 / 9; flex: 0 0 auto; margin: 0; overflow: hidden; }
+.renewal-marquee figure { position: relative; width: min(430px, 38vw); aspect-ratio: 16 / 9; flex: 0 0 auto; margin: 0; overflow: hidden; }
 .renewal-marquee img { object-fit: cover; }
 @keyframes renewal-scroll { to { transform: translateX(calc(-50% - 9px)); } }
 
@@ -717,7 +720,10 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-contact-copy h2 { max-width: 500px; margin: 0; font-size: 46px; line-height: 1.12; letter-spacing: 0; }
 .renewal-contact-copy > p { max-width: 520px; margin: 24px 0 38px; color: rgba(255,255,255,.73); font-size: 16px; line-height: 1.75; }
 .renewal-contact-list { border-top: 1px solid rgba(255,255,255,.2); }
-.renewal-contact-list > a, .renewal-contact-list > div { min-height: 82px; display: grid; grid-template-columns: 30px 1fr; gap: 16px; align-items: center; border-bottom: 1px solid rgba(255,255,255,.2); }
+.renewal-office-block { padding: 24px 0 19px; border-bottom: 1px solid rgba(255,255,255,.2); }
+.renewal-office-block h3 { margin: 0 0 9px; color: #fff; font-size: 18px; line-height: 1.3; }
+.renewal-office-block h3 small { color: #9ee0b3; font-size: 12px; font-weight: 700; }
+.renewal-office-block > a { min-height: 52px; display: grid; grid-template-columns: 30px 1fr; gap: 16px; align-items: center; }
 .renewal-contact-list svg { color: #91dfaa; }
 .renewal-contact-list span { display: block; color: rgba(255,255,255,.57); font-size: 11px; }
 .renewal-contact-list strong { display: block; margin-top: 4px; color: #fff; font-size: 15px; }
@@ -738,13 +744,17 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-form-success button { margin-top: 15px; padding: 0; border: 0; background: transparent; color: var(--renewal-green-dark); font-weight: 700; cursor: pointer; }
 
 .renewal-footer { padding: 74px 0 24px; border-top: 1px solid var(--renewal-line); background: #fff; }
-.renewal-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 54px; }
-.renewal-footer-brand p { max-width: 310px; margin: 17px 0 0; color: var(--renewal-muted); font-size: 13px; line-height: 1.65; }
+.renewal-footer-grid { display: grid; grid-template-columns: 1.35fr .8fr .8fr 1.7fr; gap: 48px; }
+.renewal-footer-brand p { max-width: 310px; display: flex; gap: 16px; margin: 17px 0 0; color: var(--renewal-muted); font-size: 12px; font-weight: 800; line-height: 1.65; }
+.renewal-footer-brand p span { color: var(--renewal-green-dark); }
 .renewal-footer-grid > div:not(:first-child) { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
 .renewal-footer-grid > div > span { margin-bottom: 7px; color: var(--renewal-green); font-size: 11px; font-weight: 800; }
 .renewal-footer-grid a { color: #4d6255; font-size: 13px; }
 .renewal-footer-grid a:hover { color: var(--renewal-green); }
 .renewal-footer-contact a { display: inline-flex; align-items: center; gap: 8px; }
+.renewal-footer-contact strong { margin-top: 4px; color: var(--renewal-ink); font-size: 12px; line-height: 1.35; }
+.renewal-footer-contact strong:not(:first-of-type) { margin-top: 11px; }
+.renewal-footer-contact small { color: var(--renewal-muted); font-size: 10px; }
 .renewal-footer-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 58px; padding-top: 22px; border-top: 1px solid var(--renewal-line); color: #738078; font-size: 12px; }
 .renewal-socials { display: flex; gap: 8px; }
 .renewal-socials a { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--renewal-line); border-radius: 50%; color: var(--renewal-green-dark); transition: background .2s ease, color .2s ease; }
@@ -787,7 +797,7 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-model-table h2 { margin: 0 0 25px; font-size: 30px; }
 .renewal-model-table > div { overflow-x: auto; }
 .renewal-model-table table { width: 100%; min-width: 780px; border-collapse: collapse; }
-.renewal-model-table th { padding: 15px; background: var(--renewal-green-dark); color: #fff; text-align: left; font-size: 12px; }
+.renewal-model-table th { position: sticky; z-index: 2; top: 76px; padding: 15px; background: var(--renewal-green-dark); color: #fff; text-align: left; font-size: 12px; }
 .renewal-model-table td { padding: 15px; border-bottom: 1px solid var(--renewal-line); color: #425549; font-size: 13px; }
 .renewal-related { padding: 105px 0 118px; border-top: 1px solid var(--renewal-line); background: #f6faf7; }
 
@@ -810,10 +820,8 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-value-grid h3 { margin: 35px 0 13px; font-size: 21px; }
 .renewal-value-grid p { margin: 0; color: var(--renewal-muted); font-size: 13px; line-height: 1.7; }
 .renewal-gallery { padding: 110px 0; }
-.renewal-about-gallery { display: grid; grid-template-columns: 1.15fr .85fr; grid-template-rows: repeat(2, 300px); gap: 16px; }
+.renewal-about-gallery { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); grid-template-rows: repeat(2, 260px); gap: 16px; }
 .renewal-about-gallery figure { position: relative; margin: 0; overflow: hidden; }
-.renewal-about-gallery figure:first-child { grid-row: 1 / 3; }
-.renewal-about-gallery figure:last-child { display: none; }
 .renewal-about-gallery img { object-fit: cover; }
 .renewal-mission { padding: 70px 0; background: var(--renewal-green-dark); color: #fff; }
 .renewal-mission > div { display: grid; grid-template-columns: 60px 1fr auto; gap: 30px; align-items: center; }
@@ -852,11 +860,11 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
   .renewal-whatsapp { font-size: 0; }
   .renewal-menu { display: grid; }
   .renewal-hero { padding: 0 0 50px; }
-  .renewal-banner-stage { width: 100%; max-height: none; aspect-ratio: 3 / 2; box-shadow: none; }
+  .renewal-banner-stage { width: 100%; aspect-ratio: 16 / 9; }
   .renewal-hero-controls { bottom: 5px; gap: 13px; }
   .renewal-hero-controls > button { width: 38px; height: 38px; }
-  .renewal-about { min-height: 820px; align-items: flex-end; }
-  .renewal-about > img { object-position: 65% center; }
+  .renewal-about { width: 100%; min-height: 820px; align-items: flex-end; margin-top: 0; }
+  .renewal-about > img { object-position: 62% center; }
   .renewal-about::after { background: linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.8) 38%, #fff 64%); }
   .renewal-about-copy { width: 100%; max-width: none; padding: 280px 0 55px; }
   .renewal-about-copy h1 { font-size: 36px; }
@@ -865,8 +873,10 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
   .renewal-factory, .renewal-featured, .renewal-contact, .renewal-category-section, .renewal-spec-section, .renewal-related, .renewal-story, .renewal-values, .renewal-gallery { padding: 76px 0; }
   .renewal-section-head { margin-bottom: 34px; }
   .renewal-section-head h2 { font-size: 34px; }
+  .renewal-factory .renewal-section-head h2 { font-size: 40px; }
+  .renewal-factory .renewal-section-head p { font-size: 15px; }
   .renewal-marquee-track { gap: 12px; }
-  .renewal-marquee figure { width: 86vw; }
+  .renewal-marquee figure { width: 72vw; }
   .renewal-head-row { align-items: flex-start; flex-direction: column; gap: 18px; }
   .renewal-product-grid, .renewal-product-grid.is-two { grid-template-columns: 1fr; }
   .renewal-product-card { grid-template-rows: 280px 1fr; }
@@ -911,8 +921,7 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
   .renewal-story h2 { font-size: 36px; }
   .renewal-story p { font-size: 14px; }
   .renewal-value-grid { grid-template-columns: 1fr; }
-  .renewal-about-gallery { grid-template-columns: 1fr; grid-template-rows: repeat(3, 220px); }
-  .renewal-about-gallery figure:first-child { grid-row: auto; }
+  .renewal-about-gallery { grid-template-columns: 1fr; grid-template-rows: repeat(6, 220px); }
   .renewal-mission > div { grid-template-columns: 1fr; }
   .renewal-mission h2 { font-size: 27px; }
   .renewal-mission .renewal-button { width: 100%; }
