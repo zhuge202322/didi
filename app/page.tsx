@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { ArrowLeft, ArrowRight, Check, Mail, Phone } from "lucide-react";
 import { products } from "./catalog-data";
 import { InquiryForm } from "./components/inquiry-form";
@@ -38,7 +38,7 @@ export default function HomePage() {
   return (
     <main className="renewal-main">
       <section className="renewal-hero" aria-label="Featured renewable energy solutions">
-        <div className="renewal-banner-stage">
+        <div className="renewal-banner-stage" style={{ "--renewal-banner-image": `url(${banners[slide].src})` } as CSSProperties}>
           {banners.map((banner, index) => (
             <Image className={index === slide ? "is-active" : ""} src={banner.src} alt={banner.alt} fill priority={index === 0} sizes="(max-width: 900px) 100vw, 1200px" key={banner.src} />
           ))}
@@ -65,7 +65,7 @@ export default function HomePage() {
       </section>
 
       <section className="renewal-factory" id="factory">
-        <div className="renewal-shell renewal-section-head"><span>OUR NETWORK</span><h2>Production visibility from factory floor to export packing.</h2><p>Experienced manufacturing partners, clear quality checks and coordinated international trade support.</p></div>
+        <div className="renewal-shell renewal-section-head"><span>OUR WORKSHOP</span><h2>Production visibility from factory floor to export packing.</h2><p>Experienced manufacturing partners, clear quality checks and coordinated international trade support.</p></div>
         <div className="renewal-marquee" aria-label="Factory and office photo gallery">
           <div className="renewal-marquee-track">
             {[...factoryImages, ...factoryImages].map((image, index) => <figure key={`${image.src}-${index}`}><Image src={image.src} alt={index < factoryImages.length ? image.alt : ""} fill sizes="(max-width: 700px) 85vw, 42vw" /></figure>)}

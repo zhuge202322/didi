@@ -653,16 +653,32 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-brand { width: 158px; height: 58px; display: inline-flex; align-items: center; }
 .renewal-brand img { width: 158px; height: 58px; object-fit: contain; }
 .renewal-nav { display: flex; align-items: center; gap: 35px; margin-left: auto; }
-.renewal-nav a { position: relative; padding: 28px 0 25px; color: #32483b; font-size: 14px; font-weight: 700; }
-.renewal-nav a::after { position: absolute; right: 50%; bottom: 0; left: 50%; height: 3px; content: ""; background: var(--renewal-green); transition: right .2s ease, left .2s ease; }
-.renewal-nav a:hover::after, .renewal-nav a.is-current::after { right: 0; left: 0; }
+.renewal-nav-link { position: relative; min-height: 76px; display: flex; align-items: center; gap: 5px; padding: 0; color: #32483b; font-size: 14px; font-weight: 700; }
+.renewal-nav-link::after { position: absolute; right: 50%; bottom: 0; left: 50%; height: 3px; content: ""; background: var(--renewal-green); transition: right .2s ease, left .2s ease; }
+.renewal-nav-link:hover::after, .renewal-nav-link.is-current::after { right: 0; left: 0; }
+.renewal-products-nav { display: flex; align-self: stretch; }
+.renewal-products-nav > .renewal-nav-link svg { transition: transform .2s ease; }
+.renewal-mega-menu { position: fixed; z-index: 90; top: 76px; right: 0; left: 0; padding: 22px 0 26px; border-top: 1px solid var(--renewal-line); background: rgba(255,255,255,.98); box-shadow: 0 24px 42px rgba(17,54,31,.14); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: opacity .2s ease, visibility .2s ease, transform .2s ease; }
+.renewal-products-nav:hover .renewal-mega-menu, .renewal-products-nav:focus-within .renewal-mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.renewal-products-nav:hover > .renewal-nav-link svg, .renewal-products-nav:focus-within > .renewal-nav-link svg { transform: rotate(180deg); }
+.renewal-mega-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.renewal-mega-category { min-width: 0; min-height: 140px; display: grid; grid-template-columns: 132px minmax(0,1fr) 18px; gap: 16px; align-items: center; padding: 14px; border: 1px solid var(--renewal-line); border-radius: 4px; background: #f8fbf9; color: var(--renewal-ink); transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+.renewal-mega-category:hover, .renewal-mega-category:focus-visible { border-color: #acd4b8; background: var(--renewal-green-soft); transform: translateY(-2px); }
+.renewal-mega-image { position: relative; width: 132px; height: 112px; overflow: hidden; border: 1px solid var(--renewal-line); border-radius: 3px; background: #fff; }
+.renewal-mega-image img { object-fit: contain; padding: 8px; }
+.renewal-mega-copy { min-width: 0; }
+.renewal-mega-copy strong { display: block; font-size: 17px; line-height: 1.25; }
+.renewal-mega-copy small { display: block; margin-top: 8px; color: var(--renewal-muted); font-size: 12px; line-height: 1.45; }
+.renewal-mega-category > svg { color: var(--renewal-green); }
 .renewal-header-actions { display: flex; align-items: center; gap: 12px; margin-left: 34px; }
 .renewal-whatsapp { min-height: 42px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; border-radius: 4px; background: var(--renewal-green); color: #fff; font-size: 13px; font-weight: 700; }
 .renewal-menu { width: 44px; height: 44px; display: none; place-items: center; padding: 0; border: 1px solid var(--renewal-line); background: #fff; color: var(--renewal-ink); cursor: pointer; }
 
 .renewal-hero { position: relative; display: grid; place-items: center; padding: 0 0 54px; background: var(--renewal-green-soft); }
-.renewal-banner-stage { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #fff; }
-.renewal-banner-stage img { object-fit: contain; opacity: 0; transition: opacity .55s ease; }
+.renewal-banner-stage { position: relative; width: 100%; height: clamp(560px, 76svh, 740px); overflow: hidden; background: #fff; }
+.renewal-banner-stage::before { position: absolute; inset: -24px; content: ""; background: var(--renewal-banner-image) center / cover no-repeat; filter: blur(18px); opacity: .3; transform: scale(1.04); transition: background-image .3s ease; }
+.renewal-banner-stage::after { position: absolute; inset: 0; content: ""; background: rgba(255,255,255,.22); }
+.renewal-banner-stage img { z-index: 1; object-fit: contain; opacity: 0; transition: opacity .55s ease; }
 .renewal-banner-stage img.is-active { opacity: 1; }
 .renewal-hero-controls { position: absolute; z-index: 3; bottom: 8px; display: flex; align-items: center; gap: 20px; }
 .renewal-hero-controls > button { width: 42px; height: 42px; display: grid; place-items: center; padding: 0; border: 1px solid #cbdcd0; border-radius: 50%; background: #fff; color: var(--renewal-green-dark); cursor: pointer; }
@@ -832,6 +848,8 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 
 @media (max-width: 1000px) {
   .renewal-shell { width: min(calc(100% - 40px), var(--renewal-shell)); }
+  .renewal-banner-stage { height: auto; aspect-ratio: 16 / 9; }
+  .renewal-banner-stage::before, .renewal-banner-stage::after { display: none; }
   .renewal-nav { gap: 22px; }
   .renewal-whatsapp { padding: 0 13px; }
   .renewal-about-copy { width: 64%; }
@@ -850,17 +868,26 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
   .renewal-header, .renewal-header-inner { height: 70px; }
   .renewal-main > section[id] { scroll-margin-top: 70px; }
   .renewal-brand, .renewal-brand img { width: 130px; height: 52px; }
-  .renewal-nav { position: absolute; top: 70px; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 15px 18px; border-bottom: 1px solid var(--renewal-line); background: #fff; box-shadow: 0 18px 30px rgba(22,72,38,.1); }
+  .renewal-nav { position: absolute; top: 70px; right: 0; left: 0; display: none; max-height: calc(100svh - 70px); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 15px 18px; border-bottom: 1px solid var(--renewal-line); background: #fff; box-shadow: 0 18px 30px rgba(22,72,38,.1); }
   .renewal-nav.is-open { display: flex; }
-  .renewal-nav a { padding: 15px 8px; border-bottom: 1px solid var(--renewal-line); }
-  .renewal-nav a::after { display: none; }
+  .renewal-nav-link { min-height: 0; padding: 15px 8px; border-bottom: 1px solid var(--renewal-line); }
+  .renewal-nav-link::after { display: none; }
+  .renewal-products-nav { display: block; }
+  .renewal-mega-menu { position: static; padding: 0; border: 0; background: #fff; box-shadow: none; opacity: 1; visibility: visible; transform: none; }
+  .renewal-mega-grid { width: 100%; grid-template-columns: 1fr; gap: 0; }
+  .renewal-mega-category { min-height: 76px; grid-template-columns: 64px minmax(0,1fr) 18px; gap: 12px; padding: 10px 8px; border: 0; border-bottom: 1px solid var(--renewal-line); border-radius: 0; background: #f8fbf9; }
+  .renewal-mega-category:hover, .renewal-mega-category:focus-visible { transform: none; }
+  .renewal-mega-image { width: 64px; height: 56px; }
+  .renewal-mega-image img { padding: 4px; }
+  .renewal-mega-copy strong { font-size: 14px; }
+  .renewal-mega-copy small { display: none; }
   .renewal-header-actions { margin-left: auto; }
   .renewal-whatsapp { width: 42px; padding: 0; justify-content: center; }
   .renewal-whatsapp svg { width: 19px; }
   .renewal-whatsapp { font-size: 0; }
   .renewal-menu { display: grid; }
   .renewal-hero { padding: 0 0 50px; }
-  .renewal-banner-stage { width: 100%; aspect-ratio: 16 / 9; }
+  .renewal-banner-stage { width: 100%; }
   .renewal-hero-controls { bottom: 5px; gap: 13px; }
   .renewal-hero-controls > button { width: 38px; height: 38px; }
   .renewal-about { width: 100%; min-height: 820px; align-items: flex-end; margin-top: 0; }

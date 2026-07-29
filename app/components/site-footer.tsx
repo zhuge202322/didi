@@ -10,7 +10,7 @@ export function SiteFooter() {
       <div className="renewal-shell renewal-footer-grid">
         <div className="renewal-footer-brand"><Brand /><p><span>ENERGY</span><span>NATURE</span><span>FUTURE</span></p></div>
         <div><span>PRODUCTS</span><Link href="/products#hybrid">Hybrid Solar Inverter</Link><Link href="/products#pump">Solar Pump Inverter</Link><Link href="/products#battery">LiFePO4 Battery</Link></div>
-        <div><span>COMPANY</span><Link href="/about">About Us</Link><Link href="/#factory">Our Network</Link><Link href="/#contact">Contact Us</Link></div>
+        <div><span>COMPANY</span><Link href="/about">About Us</Link><Link href="/#factory">Our Workshop</Link><Link href="/#contact">Contact Us</Link></div>
         <div className="renewal-footer-contact">
           <span>CONTACT</span>
           <strong>China Office</strong>
