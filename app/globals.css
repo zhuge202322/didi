@@ -797,7 +797,7 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-model-table h2 { margin: 0 0 25px; font-size: 30px; }
 .renewal-model-table > div { overflow-x: auto; }
 .renewal-model-table table { width: 100%; min-width: 780px; border-collapse: collapse; }
-.renewal-model-table th { position: sticky; z-index: 2; top: 76px; padding: 15px; background: var(--renewal-green-dark); color: #fff; text-align: left; font-size: 12px; }
+.renewal-model-table th { padding: 15px; background: var(--renewal-green-dark); color: #fff; text-align: left; font-size: 12px; }
 .renewal-model-table td { padding: 15px; border-bottom: 1px solid var(--renewal-line); color: #425549; font-size: 13px; }
 .renewal-related { padding: 105px 0 118px; border-top: 1px solid var(--renewal-line); background: #f6faf7; }
 
