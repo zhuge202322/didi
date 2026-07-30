@@ -9,10 +9,10 @@ import { InquiryForm } from "./components/inquiry-form";
 import { ProductLinkCard } from "./components/product-link-card";
 
 const banners = [
-  { src: "/new-site/banner-v3-1.png", alt: "YnJoy clean energy solutions for homes, batteries and water pumping" },
-  { src: "/new-site/banner-v3-2.png", alt: "YnJoy solar pump inverters for irrigation and water systems" },
-  { src: "/new-site/banner-v3-3.png", alt: "YnJoy home solar inverters from 1.5kW to 12kW" },
-  { src: "/new-site/banner-v3-4.png", alt: "YnJoy LiFePO4 batteries for home energy storage" },
+  { src: "/hero/hero-clean-energy.jpg", alt: "YnJoy clean energy solutions for homes, batteries and water pumping" },
+  { src: "/hero/hero-home-inverters.png", alt: "YnJoy home solar inverters from 1.5kW to 12kW" },
+  { src: "/hero/hero-pump-inverters.jpg", alt: "YnJoy solar pump inverters for irrigation and water systems" },
+  { src: "/hero/hero-battery.png", alt: "YnJoy LiFePO4 batteries for home energy storage" },
 ];
 
 const factoryImages = [1, 2, 3, 4, 5, 6].map((index) => ({ src: `/new-site/factory-${index}.png`, alt: `Manufacturing and office environment ${index}` }));
@@ -40,7 +40,7 @@ export default function HomePage() {
       <section className="renewal-hero" aria-label="Featured renewable energy solutions">
         <div className="renewal-banner-stage" style={{ "--renewal-banner-image": `url(${banners[slide].src})` } as CSSProperties}>
           {banners.map((banner, index) => (
-            <Image className={index === slide ? "is-active" : ""} src={banner.src} alt={banner.alt} fill priority={index === 0} sizes="(max-width: 900px) 100vw, 1200px" key={banner.src} />
+            <Image className={index === slide ? "is-active" : ""} src={banner.src} alt={banner.alt} fill priority={index === 0} sizes="100vw" key={banner.src} />
           ))}
         </div>
         <div className="renewal-hero-controls">

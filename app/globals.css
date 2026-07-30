@@ -674,16 +674,18 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-whatsapp { min-height: 42px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; border-radius: 4px; background: var(--renewal-green); color: #fff; font-size: 13px; font-weight: 700; }
 .renewal-menu { width: 44px; height: 44px; display: none; place-items: center; padding: 0; border: 1px solid var(--renewal-line); background: #fff; color: var(--renewal-ink); cursor: pointer; }
 
-.renewal-hero { position: relative; display: grid; place-items: center; padding: 0 0 54px; background: var(--renewal-green-soft); }
-.renewal-banner-stage { position: relative; width: 100%; height: clamp(560px, 76svh, 740px); overflow: hidden; background: #fff; }
-.renewal-banner-stage::before { position: absolute; inset: -24px; content: ""; background: var(--renewal-banner-image) center / cover no-repeat; filter: blur(18px); opacity: .3; transform: scale(1.04); transition: background-image .3s ease; }
-.renewal-banner-stage::after { position: absolute; inset: 0; content: ""; background: rgba(255,255,255,.22); }
+.renewal-hero { position: relative; width: 100%; height: calc(100svh - 76px); display: grid; place-items: center; overflow: hidden; background: #eef7f1; }
+.renewal-banner-stage { position: relative; width: 100%; height: 100%; overflow: hidden; background: #eef7f1; }
+.renewal-banner-stage::before { position: absolute; inset: -28px; content: ""; background: var(--renewal-banner-image) center / cover no-repeat; filter: blur(22px); opacity: .38; transform: scale(1.05); transition: background-image .3s ease; }
 .renewal-banner-stage img { z-index: 1; object-fit: contain; opacity: 0; transition: opacity .55s ease; }
 .renewal-banner-stage img.is-active { opacity: 1; }
-.renewal-hero-controls { position: absolute; z-index: 3; bottom: 8px; display: flex; align-items: center; gap: 20px; }
-.renewal-hero-controls > button { width: 42px; height: 42px; display: grid; place-items: center; padding: 0; border: 1px solid #cbdcd0; border-radius: 50%; background: #fff; color: var(--renewal-green-dark); cursor: pointer; }
+@media (min-width: 1001px) {
+  .renewal-banner-stage img { object-fit: cover; object-position: center; }
+}
+.renewal-hero-controls { position: absolute; z-index: 3; bottom: 24px; display: flex; align-items: center; gap: 20px; }
+.renewal-hero-controls > button { width: 42px; height: 42px; display: grid; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.76); border-radius: 50%; background: rgba(255,255,255,.9); color: var(--renewal-green-dark); box-shadow: 0 8px 22px rgba(12,48,25,.16); cursor: pointer; }
 .renewal-hero-controls > div { display: flex; gap: 8px; }
-.renewal-hero-controls > div button { width: 28px; height: 4px; padding: 0; border: 0; border-radius: 0; background: #b8cbbf; cursor: pointer; }
+.renewal-hero-controls > div button { width: 28px; height: 4px; padding: 0; border: 0; border-radius: 0; background: rgba(255,255,255,.72); box-shadow: 0 1px 4px rgba(10,42,22,.24); cursor: pointer; }
 .renewal-hero-controls > div button.is-active { background: var(--renewal-green); }
 
 .renewal-about { position: relative; width: min(calc(100% - 80px), 1440px); min-height: 720px; display: flex; align-items: center; margin: 38px auto 0; }
@@ -848,8 +850,6 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 
 @media (max-width: 1000px) {
   .renewal-shell { width: min(calc(100% - 40px), var(--renewal-shell)); }
-  .renewal-banner-stage { height: auto; aspect-ratio: 16 / 9; }
-  .renewal-banner-stage::before, .renewal-banner-stage::after { display: none; }
   .renewal-nav { gap: 22px; }
   .renewal-whatsapp { padding: 0 13px; }
   .renewal-about-copy { width: 64%; }
@@ -886,9 +886,8 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
   .renewal-whatsapp svg { width: 19px; }
   .renewal-whatsapp { font-size: 0; }
   .renewal-menu { display: grid; }
-  .renewal-hero { padding: 0 0 50px; }
-  .renewal-banner-stage { width: 100%; }
-  .renewal-hero-controls { bottom: 5px; gap: 13px; }
+  .renewal-hero { height: auto; aspect-ratio: 16 / 9; }
+  .renewal-hero-controls { bottom: 18px; gap: 13px; }
   .renewal-hero-controls > button { width: 38px; height: 38px; }
   .renewal-about { width: 100%; min-height: 820px; align-items: flex-end; margin-top: 0; }
   .renewal-about > img { object-position: 62% center; }
