@@ -1,6 +1,6 @@
 import { yj100ModelRows, yj200ModelRows, yj33pvModelRows } from "./pump-model-data";
 
-export type ProductCategory = "hybrid" | "pump" | "battery";
+export type ProductCategory = string;
 
 export type Product = {
   slug: string;
@@ -103,7 +103,7 @@ export const products: Product[] = [
     range: "4.0kW / 24V",
     summary: "Compact 24V hybrid inverter with 5kW PV input and 100A charging.",
     description: "A compact 24V hybrid inverter with 4kW output, 5kW PV input and a single output for home solar installations.",
-    image: "/new-site/hybrid-5kw-parallel.png",
+    image: "/new-site/hybrid-4kw.png",
     specs: [
       ["Inverter output power", "4.0kW"],
       ["Battery voltage", "24V"],
@@ -211,7 +211,7 @@ export const products: Product[] = [
     range: "15.36kWh",
     summary: "Wheeled 15.36kWh battery with integrated BMS, LCD and inverter communication.",
     description: "A high-capacity residential and commercial storage pack built with Grade A LiFePO4 cells and a galvanized steel enclosure.",
-    image: "/new-site/battery-style-1.png",
+    image: "/new-site/battery-300ah.png",
     specs: [
       ["Nominal voltage / capacity", "51.2V / 300Ah"],
       ["Energy", "15,360Wh"],
@@ -234,7 +234,7 @@ export const products: Product[] = [
     range: "20.48kWh",
     summary: "20.48kWh wheeled storage pack for long-duration backup and solar self-use.",
     description: "A scalable high-capacity battery platform with integrated communication, LCD monitoring and robust BMS protection.",
-    image: "/new-site/battery-style-2.png",
+    image: "/new-site/battery-400ah.png",
     specs: [
       ["Nominal voltage / capacity", "51.2V / 400Ah"],
       ["Energy", "20,480Wh"],
@@ -257,7 +257,7 @@ export const products: Product[] = [
     range: "30.72kWh",
     summary: "The largest supplied battery configuration, with 200A continuous discharge.",
     description: "A 30.72kWh storage pack for demanding backup and solar energy applications requiring higher continuous discharge capacity.",
-    image: "/new-site/battery-style-2.png",
+    image: "/new-site/battery-600ah.png",
     specs: [
       ["Nominal voltage / capacity", "51.2V / 600Ah"],
       ["Energy", "30,720Wh"],

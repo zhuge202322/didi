@@ -3,22 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { notFound } from "next/navigation";
-import { getProduct, products } from "../../catalog-data";
+import { getProductBySlug, getProducts } from "../../../lib/content-store";
 import { ProductLinkCard } from "../../components/product-link-card";
 
-export function generateStaticParams() {
-  return products.map((product) => ({ slug: product.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const product = getProduct(params.slug);
+  const product = getProductBySlug(params.slug);
   return product ? { title: `${product.name} | YnJoy Energy`, description: product.summary } : {};
 }
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-  const product = getProduct(params.slug);
+  const product = getProductBySlug(params.slug);
   if (!product) notFound();
-  const related = products.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 2);
+  const related = getProducts().filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 2);
 
   return (
     <main className="renewal-detail-page">

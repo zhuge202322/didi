@@ -24,6 +24,12 @@ yarn-error.log*
 .env.*
 !.env.example
 
+# local SQLite content and admin uploads
+data/*.db
+data/*.db-*
+public/uploads/
+!public/uploads/.gitkeep
+
 # OS and editor files
 .DS_Store
 Thumbs.db

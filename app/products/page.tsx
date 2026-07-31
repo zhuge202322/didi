@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
-import { getProductsByCategory, productCategories } from "../catalog-data";
+import { getCategories, getProducts } from "../../lib/content-store";
 import { ProductLinkCard } from "../components/product-link-card";
 
 export const metadata: Metadata = {
@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   description: "Hybrid solar inverters, solar pump inverters and high-capacity LiFePO4 batteries for global projects.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function ProductsPage() {
+  const productCategories = getCategories();
+  const products = getProducts();
   return (
     <main className="renewal-products-page">
       <section className="renewal-products-hero">
@@ -25,7 +29,7 @@ export default function ProductsPage() {
         <section className="renewal-category-section" id={category.id} key={category.id}>
           <div className="renewal-shell">
             <div className="renewal-category-heading"><span>{String(index + 1).padStart(2, "0")}</span><div><p>{category.subtitle}</p><h2>{category.title}</h2></div><p>{category.description}</p></div>
-            <div className="renewal-product-grid">{getProductsByCategory(category.id).map((product) => <ProductLinkCard product={product} key={product.slug} />)}</div>
+            <div className="renewal-product-grid">{products.filter((product) => product.category === category.id).map((product) => <ProductLinkCard product={product} key={product.slug} />)}</div>
           </div>
         </section>
       ))}

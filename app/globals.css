@@ -770,6 +770,7 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-footer-grid a { color: #4d6255; font-size: 13px; }
 .renewal-footer-grid a:hover { color: var(--renewal-green); }
 .renewal-footer-contact a { display: inline-flex; align-items: center; gap: 8px; }
+.renewal-footer-contact > div { display: flex; flex-direction: column; gap: 8px; }
 .renewal-footer-contact strong { margin-top: 4px; color: var(--renewal-ink); font-size: 12px; line-height: 1.35; }
 .renewal-footer-contact strong:not(:first-of-type) { margin-top: 11px; }
 .renewal-footer-contact small { color: var(--renewal-muted); font-size: 10px; }

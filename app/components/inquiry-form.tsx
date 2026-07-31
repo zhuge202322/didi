@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Check, Mail, Send } from "lucide-react";
-import { products } from "../catalog-data";
+import type { Product } from "../catalog-data";
 
-export function InquiryForm({ defaultProduct = "" }: { defaultProduct?: string }) {
+export function InquiryForm({ defaultProduct = "", products, inquiryEmail }: { defaultProduct?: string; products: Product[]; inquiryEmail: string }) {
   const [mailHref, setMailHref] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -21,7 +21,7 @@ export function InquiryForm({ defaultProduct = "" }: { defaultProduct?: string }
       `Quantity: ${data.get("quantity") || ""}`,
       `Requirements: ${data.get("message") || ""}`,
     ].join("\n");
-    setMailHref(`mailto:fangdan0328@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+    setMailHref(`mailto:${inquiryEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
   };
 
   if (mailHref) {
