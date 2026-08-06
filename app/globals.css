@@ -670,8 +670,7 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 .renewal-mega-copy strong { display: block; font-size: 17px; line-height: 1.25; }
 .renewal-mega-copy small { display: block; margin-top: 8px; color: var(--renewal-muted); font-size: 12px; line-height: 1.45; }
 .renewal-mega-category > svg { color: var(--renewal-green); }
-.renewal-header-actions { display: flex; align-items: center; gap: 12px; margin-left: 34px; }
-.renewal-whatsapp { min-height: 42px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; border-radius: 4px; background: var(--renewal-green); color: #fff; font-size: 13px; font-weight: 700; }
+.renewal-header-actions { display: none; }
 .renewal-menu { width: 44px; height: 44px; display: none; place-items: center; padding: 0; border: 1px solid var(--renewal-line); background: #fff; color: var(--renewal-ink); cursor: pointer; }
 
 .renewal-hero { position: relative; width: 100%; height: calc(100svh - 76px); display: grid; place-items: center; overflow: hidden; background: #eef7f1; }
@@ -852,7 +851,6 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
 @media (max-width: 1000px) {
   .renewal-shell { width: min(calc(100% - 40px), var(--renewal-shell)); }
   .renewal-nav { gap: 22px; }
-  .renewal-whatsapp { padding: 0 13px; }
   .renewal-about-copy { width: 64%; }
   .renewal-product-card { grid-template-rows: 280px 1fr; }
   .renewal-contact-grid { gap: 50px; }
@@ -882,10 +880,7 @@ body { color: var(--renewal-ink); background: #fff; font-family: Arial, "Helveti
   .renewal-mega-image img { padding: 4px; }
   .renewal-mega-copy strong { font-size: 14px; }
   .renewal-mega-copy small { display: none; }
-  .renewal-header-actions { margin-left: auto; }
-  .renewal-whatsapp { width: 42px; padding: 0; justify-content: center; }
-  .renewal-whatsapp svg { width: 19px; }
-  .renewal-whatsapp { font-size: 0; }
+  .renewal-header-actions { display: flex; margin-left: auto; }
   .renewal-menu { display: grid; }
   .renewal-hero { height: auto; aspect-ratio: 16 / 9; }
   .renewal-hero-controls { bottom: 18px; gap: 13px; }

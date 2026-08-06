@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ArrowUpRight, ChevronDown, Menu, MessageCircle, X } from "lucide-react";
-import type { CategoryRecord, SiteSettings, SocialLinkRecord } from "../../lib/content-store";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import type { CategoryRecord, SiteSettings } from "../../lib/content-store";
 import { Brand } from "./brand";
 
 const navigation = [
@@ -14,7 +14,7 @@ const navigation = [
   { label: "Contact", href: "/#contact" },
 ];
 
-export function SiteHeader({ settings, categories, socialLinks }: { settings: SiteSettings; categories: CategoryRecord[]; socialLinks: SocialLinkRecord[] }) {
+export function SiteHeader({ settings, categories }: { settings: SiteSettings; categories: CategoryRecord[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -45,7 +45,6 @@ export function SiteHeader({ settings, categories, socialLinks }: { settings: Si
           ))}
         </nav>
         <div className="renewal-header-actions">
-          <a className="renewal-whatsapp" href={socialLinks.find((link) => link.platform.toLowerCase() === "whatsapp")?.url || "#contact"} target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp</a>
           <button className="renewal-menu" type="button" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen((value) => !value)}>{open ? <X /> : <Menu />}</button>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <SiteHeader settings={settings} categories={categories} socialLinks={socialLinks} />
+        <SiteHeader settings={settings} categories={categories} />
         <RevealManager />
         {children}
         <SiteFooter settings={settings} categories={categories} contacts={contacts} socialLinks={socialLinks} />
